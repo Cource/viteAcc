@@ -33,10 +33,11 @@
       button.sell(@click='sell')
         .img
   .pur(v-if="showPur")
+    form(@submit="addDist" onsubmit="return false" )
+      input.distname(type="text" v-if="showAdd")
     .add(@click="showAdd = !showAdd")
-      form(@submit="addDist" onsubmit="return false" )
-        input(type="text" v-if="showAdd")
-      .img
+      .img(v-if="!showAdd")
+      .cancel(v-if="showAdd") Cancel
       p(v-if="!showAdd") Add a distributor
       .close
     ul.disList
@@ -219,6 +220,8 @@ export default {
   .pur
     height: 25rem
     @extend %flexcol
+    .distname
+      font-size: 1.5rem
     .add
       display: flex
       align-items: center
@@ -228,6 +231,10 @@ export default {
         width: 2rem
         margin: 1rem 1rem
         background: url(../assets/add.svg) center/contain no-repeat
+      .cancel
+        padding: 0.5rem 1rem
+        background: #3C4748
+        color: white
     .disList
       background: #fff
       padding: 1rem
