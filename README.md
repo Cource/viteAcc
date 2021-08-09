@@ -1,4 +1,4 @@
-# viteAcc
+# viteAcc ( ABANDONED )
 An accounting solution for small companies who dont need an active invetory management system.
 ## Run
 Run the following commands in the terminal after cloning the repo and cd-ing into it
